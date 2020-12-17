@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">About Me</string>
+    <string name="name">Hwang NamKung</string>
+    <string name="yellow_star">Yellow_star</string>
+    
+    <string name="bio">반갑다. 남궁 황이라고 한다.
+    \n\n나는 가족을 사랑한다.
+    \n\n태어난 곳은 부산이지만 현재 서울에 살고 있다.
+    \n\n난 운동을 매우 좋아한다. 최근 코로나 2.5단계 격상으로 인해 헬스장에 가지 못하게 되었다.
+    \n\n그래서 동료들과 오전에 등산을 하며 운동에 대한 갈증을 채워 나가고 있다.
+    \n\n오전 운동 후에는 간단하게 아침을 먹고 공부를 하러 나선다.
+    \n\n성수동 멘토님 사무실에서 공부를 저녁까지 한다.
+    \n\n매일 반복되는 일상이지만 꾸준함을 무기로 계속 임하려 한다.
+    \n\n우리는 할 수 있다.
+    </string>
+    <string name="what_is_your_nickname">What is your Nickname?</string>
+    <string name="done">Done</string>
+</resources>
