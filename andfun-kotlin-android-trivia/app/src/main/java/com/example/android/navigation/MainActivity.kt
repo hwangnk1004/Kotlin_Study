@@ -18,7 +18,10 @@ package com.example.android.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,5 +29,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         @Suppress("UNUSED_VARIABLE")
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+
+        /** 1) myNavHostFragment 에서 NavController을 찾는다.
+         *  2) NavigationUI.setupActionBarWithNavController을 이용해서 NavController을 ActionBar에 연결한다.
+         */
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this,navController)
+    }
+
+    /**
+        마지막으로 Activity가 Activity 에서 navigateUp작업을 처리하도록 한다.
+        이를 위해 onSupportNavigateUP()을 재정의 하고 navController을 찾은 다음에 navigateup()을 호출한다.
+     */
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return navController.navigateUp()
     }
 }
