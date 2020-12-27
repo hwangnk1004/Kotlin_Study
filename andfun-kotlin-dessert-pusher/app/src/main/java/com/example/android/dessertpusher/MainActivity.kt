@@ -18,6 +18,8 @@ package com.example.android.dessertpusher
 
 import android.content.ActivityNotFoundException
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -26,12 +28,16 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.example.android.dessertpusher.databinding.ActivityMainBinding
+import timber.log.Timber
 
+const val KEY_REVENUE = "key_revenue"
 class MainActivity : AppCompatActivity(), LifecycleObserver {
+
+
 
     private var revenue = 0
     private var dessertsSold = 0
-
+    private lateinit var dessertTimer: DessertTimer
     // Contains all the views
     private lateinit var binding: ActivityMainBinding
 
@@ -64,6 +70,8 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("MainActivity", "onCreate called")
+
 
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -72,6 +80,12 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             onDessertClicked()
         }
 
+        dessertTimer = DessertTimer(this.lifecycle)
+
+
+        if (savedInstanceState != null) {
+            revenue = savedInstanceState.getInt(KEY_REVENUE)
+        }
         // Set the TextViews to the right values
         binding.revenue = revenue
         binding.amountSold = dessertsSold
@@ -79,6 +93,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         // Make sure the correct dessert is showing
         binding.dessertButton.setImageResource(currentDessert.imageId)
     }
+
 
     /**
      * Updates the score when the dessert is clicked. Possibly shows a new dessert.
@@ -146,4 +161,43 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        outState.putInt(KEY_REVENUE,revenue)
+        Timber.i("onSaveInstanceState Called")
+    }
+    override fun onStart() {
+        super.onStart()
+        dessertsSold = 0
+//        dessertTimer.startTimer()
+        Timber.i("onStart Called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("onResume Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("onPause Called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Timber.i("onRestart Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+//        dessertTimer.stopTimer()
+        Timber.i("onStop Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.i("onDestroy Called")
+    }
+
 }
