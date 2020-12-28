@@ -22,14 +22,14 @@ fun plus(first: Int, second: Int): Int {
     return result
 }
 
-/** 디폴트 값을 갖는 함수 만들기 */
+/** 디폴트 값을 갖는 함수 */
 fun plusFive(first: Int, second: Int = 5): Int {
     val result: Int = first + second
     return result
 
 }
 
-/** 반환 값이 없는 함수 만들기
+/** 반환 값이 없는 함수
  * Unit -> return이 없다 , 생략가능하다
  * */
 fun printPlus(first: Int, second: Int): Unit {
