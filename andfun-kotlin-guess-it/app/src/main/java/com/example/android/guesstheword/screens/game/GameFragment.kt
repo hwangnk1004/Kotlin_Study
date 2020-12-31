@@ -21,6 +21,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -61,23 +62,26 @@ class GameFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
         /** 첫 번째, this 키워드를 사용하여 프래그먼트를 전달한다.
          *  두 번째, 여기에서 원하는 특정 ViewModel 클래스를 전달한다. */
+        binding.gameViewModel = viewModel
 
 
-        binding.correctButton.setOnClickListener {
-            viewModel.onCorrect()
-            updateWordText()
-        }
-        binding.skipButton.setOnClickListener {
-            viewModel.onSkip()
-            updateWordText()
-        }
 
 
+        viewModel.word.observe(this, Observer { newWord ->
+            binding.wordText.text = newWord
+        })
 
         viewModel.score.observe(this, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
         })
-        updateWordText()
+
+        viewModel.eventGameFinish.observe(this, Observer { hasFinished ->
+            if (hasFinished) {
+                gameFinished()
+                viewModel.onGameFinishComplete()
+            }
+        })
+
         return binding.root
 
     }
@@ -87,18 +91,14 @@ class GameFragment : Fragment() {
      * Called when the game is finished
      */
     private fun gameFinished() {
-        val action = GameFragmentDirections.actionGameToScore(viewModel.score.value ?: 0)
 
+        val currentScore = viewModel.score.value ?: 0
+        val action = GameFragmentDirections.actionGameToScore(currentScore)
         findNavController(this).navigate(action)
+        viewModel.onGameFinishComplete()
     }
 
 
-    /** Methods for updating the UI **/
-
-    private fun updateWordText() {
-        binding.wordText.text = viewModel.word
-
-    }
 
 
 }
