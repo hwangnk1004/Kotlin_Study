@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SweetTracker</string>
+    <string name="deliverytracking">배송조회</string>
+
+</resources>
