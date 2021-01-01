@@ -4,10 +4,18 @@ import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.app.sweettracker.databinding.ActivityMainBinding
+import com.google.gson.GsonBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,9 +27,9 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.main = this
+        Log.i("onCreate","check?")
+        retrofitTest()
 
         /** 상태바 색상 변경 */
         window.statusBarColor = Color.parseColor("#039be5")
@@ -36,11 +44,44 @@ class MainActivity : AppCompatActivity() {
         actionbar?.setDisplayShowTitleEnabled(false)
 
 
+
+    }
+
+    private fun retrofitTest() {
+
+        Log.i("retrofitTest","check?")
+        var gson = GsonBuilder()
+                .setLenient()
+                .create()
+
+        val builder: Retrofit.Builder = Retrofit.Builder()
+                .baseUrl("https://img.sweettracker.net/")
+                .addConverterFactory(GsonConverterFactory.create(gson))
+
+        val retrofit: Retrofit = builder.build()
+
+        val api = retrofit.create(Api::class.java)
+
+        api.getData().enqueue(object : Callback<ResponseGetData> {
+            override fun onResponse(call: Call<ResponseGetData>, response: Response<ResponseGetData>) {
+
+                var data = response.body()
+
+                if (response.isSuccessful) {
+                    Log.d("성공: "," " + data?.trackingDetail?.get(0)?.time)
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseGetData>, t: Throwable) {
+                Log.d("실패 : ", t.toString())
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
+        menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
 }
 

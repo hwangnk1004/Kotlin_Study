@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="main"
             type="com.app.sweettracker.MainActivity" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,8 +32,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_marginTop="56dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="56dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/notosanscjkkr"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
                     android:text="배달준비"
                     android:textColor="#212121"
                     android:textSize="30sp"
@@ -52,11 +54,790 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/notosanscjkkr"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
                     android:text="도착예정시간 : 14~16시"
                     android:textColor="#757575"
                     android:textSize="12sp"
                     android:textStyle="normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:gravity="center"
+                        android:text="집하"
+                        android:textColor="#aaaaaa"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:gravity="center"
+                        android:text="배송중"
+                        android:textColor="#aaaaaa"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/pin_location_24_px"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:gravity="center"
+                        android:text="배송완료"
+                        android:textColor="#757575"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_centerInParent="true"
+                    android:background="#f0f0f0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/ic_launcher_background" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans_cj_kkr"
+                            android:text="애플 쿠폰할인 당일출고 애플 에어팟 MMEF2KH/A"
+                            android:textColor="#212121"
+                            android:textSize="16sp"
+                            android:textStyle="normal" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/noto_sans_cj_kkr"
+                                android:text="등록일 : 2019-12-07"
+                                android:textColor="#aaaaaa"
+                                android:textSize="12sp"
+                                android:textStyle="normal" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/keyboard_arrow_right_24_px_blue" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#f0f0f0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="택배사"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="우체국택배(등기)"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="운송장번호"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="1234567890123"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/outline_file_copy_24_px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="더보기"
+                        android:textColor="#03a9f4"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:background="#f0f0f0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="배송상세"
+                        android:textColor="#212121"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="택배리뷰"
+                        android:textColor="#03a9f4"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="2019-12-11"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="06:51:00"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="D+4"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="배달준비"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/keyboard_arrow_right_24_px_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:text="과천우체국"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#f0f0f0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="2019-12-10"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="20:52:00"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="D+3"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="도착"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/keyboard_arrow_right_24_px_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:text="안양우편물류센터"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#f0f0f0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        tools:text="2019-12-10" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="20:30:00"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="D+3"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="도착"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/keyboard_arrow_right_24_px_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:text="서서울물류센터"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#f0f0f0" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        tools:text="2019-12-10" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="20:25:00"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        tools:text="D+3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="도착"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/keyboard_arrow_right_24_px_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:text="서울양천우체국"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#f0f0f0" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        tools:text="2019-12-10" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="20:02:00"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        tools:text="D+3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="발송"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/keyboard_arrow_right_24_px_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:text="서서울물류센터"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#f0f0f0" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        tools:text="2019-12-10" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="13:22:00"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        tools:text="D+3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="접수"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/keyboard_arrow_right_24_px_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:text="서울양천우체국"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#f0f0f0" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        tools:text="2019-12-10" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="13:20:00"
+                        android:textColor="#aaaaaa"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        tools:text="D+3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_cj_kkr"
+                        android:text="잡하완료"
+                        android:textColor="#212121"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/keyboard_arrow_right_24_px_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:text="서울양천우체국"
+                    android:textColor="#212121"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#f0f0f0" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:gravity="center_horizontal"
+                    android:textColor="#757575"
+                    android:textSize="10sp"
+                    android:textStyle="normal"
+                    tools:text="본 정보는 각 택배사의 전산처리 시점에 따라
+실제 상황과 차이가 발생할 수 있음을 알려드립니다.
+택배에 대한 문의는 택배사 고객센터를 이용해주세요." />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_sans_cj_kkr"
+                    android:textColor="#03a9f4"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    tools:text="택배사 고객센터 전화연결" />
+
+
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
