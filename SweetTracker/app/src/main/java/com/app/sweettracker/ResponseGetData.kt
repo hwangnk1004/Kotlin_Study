@@ -43,8 +43,6 @@ data class ResponseGetData(
 
 
 
-
-
 )
 
 data class Items (
