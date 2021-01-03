@@ -1,4 +1,4 @@
-package com.app.sweettracker
+package com.app.sweettracker.network
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
