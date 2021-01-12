@@ -1,16 +1,7 @@
 package Kotlin
 
 /**08. 제어흐름
- *  if,else
- *
- *
- *
- *
- *
- *
- *
- *
- * */
+ *  if,else */
 
 fun main(array: Array<String>) {
 
